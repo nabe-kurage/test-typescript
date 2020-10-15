@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar item_1 = __webpack_require__(/*! ./item */ \"./src/item.ts\");\nvar elem = document.getElementById('output');\nvar eBook = new item_1.Item('初めてのTypeScript', 1980);\neBook.say(elem);\n\n\n//# sourceURL=webpack:///./src/app.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar item_1 = __webpack_require__(/*! ./item */ \"./src/item.ts\");\nvar elem = document.getElementById('output');\nvar eBook = new item_1.Item('初めてのTypeScript', 2980);\neBook.say(elem);\n\n\n//# sourceURL=webpack:///./src/app.ts?");
 
 /***/ }),
 
