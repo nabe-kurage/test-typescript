@@ -51,9 +51,46 @@ function distance2(p1, p2) {
     return Math.pow((Math.pow((p1.x - p2.x), 2) + Math.pow((p1.y - p2.y), 2)), (1 / 2));
 }
 function bmi(_a) {
-    var height = _a.height, weight = _a.weight;
+    var _b = _a.height, height = _b === void 0 ? 165 : _b, _c = _a.weight, weight = _c === void 0 ? 60 : _c;
     var mHeight = height / 100.0;
     return weight / (Math.pow(mHeight, 2));
 }
 console.log(bmi({ height: 170, weight: 65 }));
-console.log(bmi({ height: 150, weight: 40 }));
+// 順番が変わっても問題ない
+console.log(bmi({ weight: 40, height: 150 }));
+console.log(bmi({ weight: 80 }));
+var Male = /** @class */ (function () {
+    function Male(name) {
+        this.name = name;
+    }
+    Male.prototype.toString = function () {
+        return "Monsieur " + this.name;
+    };
+    return Male;
+}());
+var Female = /** @class */ (function () {
+    function Female(name) {
+        this.name = name;
+    }
+    Female.prototype.toString = function () {
+        return "Madame " + this.name;
+    };
+    return Female;
+}());
+var male = new Male('Frederic');
+var female = new Female('Frederique');
+console.log(male.toString());
+console.log(female.toString());
+var maleToStr = male.toString;
+console.log(maleToStr());
+function doNothisng1() {
+}
+function doNothinh2() {
+    return;
+}
+function doNodoNothinh3() {
+    return;
+}
+// これはだめ　returnのない関数はvoid
+// function doNodoNothinh4(): undefined {
+// }

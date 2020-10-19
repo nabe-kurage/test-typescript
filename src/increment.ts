@@ -70,14 +70,65 @@ function distance2(p1: Point, p2: Point = inverse(p1)): number {
 }
 
 type TopSecret = {
-    height: number;
-    weight: number;
+    height?: number;
+    weight?: number;
 }
 
-function bmi({height, weight}: TopSecret): number {
+function bmi({height = 165, weight = 60}: TopSecret): number {
     const mHeight: number = height / 100.0;
     return weight / (mHeight ** 2);
 }
 
 console.log(bmi({ height: 170, weight: 65 }));
-console.log(bmi({ height: 150, weight: 40 }));
+// 順番が変わっても問題ない
+console.log(bmi({ weight: 40, height: 150 }));
+console.log(bmi({ weight: 80 }));
+
+
+class Male {
+    private name: string;
+
+    public constructor(name: string) {
+        this.name = name
+    }
+
+    public toString(): string {
+        return `Monsieur ${this.name}`
+    }
+}
+
+class Female {
+    private name: string;
+
+    public constructor(name: string) {
+        this.name = name
+    }
+
+    public toString(): string {
+        return `Madame ${this.name}`;
+    }
+}
+
+const male: Male = new Male('Frederic');
+const female: Female = new Female('Frederique');
+
+console.log(male.toString());
+console.log(female.toString());
+
+const maleToStr: () => string = male.toString;
+console.log(maleToStr());
+
+function doNothisng1(): void {
+
+}
+
+function doNothinh2(): void {
+    return;
+}
+
+function doNodoNothinh3(): undefined {
+    return;
+}
+// これはだめ　returnのない関数はvoid
+// function doNodoNothinh4(): undefined {
+// }
