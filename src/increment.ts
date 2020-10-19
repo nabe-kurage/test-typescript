@@ -68,3 +68,16 @@ function inverse(p: Point): Point {
 function distance2(p1: Point, p2: Point = inverse(p1)): number {
     return ((p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2) ** (1 / 2);
 }
+
+type TopSecret = {
+    height: number;
+    weight: number;
+}
+
+function bmi({height, weight}: TopSecret): number {
+    const mHeight: number = height / 100.0;
+    return weight / (mHeight ** 2);
+}
+
+console.log(bmi({ height: 170, weight: 65 }));
+console.log(bmi({ height: 150, weight: 40 }));

@@ -50,3 +50,10 @@ function distance2(p1, p2) {
     if (p2 === void 0) { p2 = inverse(p1); }
     return Math.pow((Math.pow((p1.x - p2.x), 2) + Math.pow((p1.y - p2.y), 2)), (1 / 2));
 }
+function bmi(_a) {
+    var height = _a.height, weight = _a.weight;
+    var mHeight = height / 100.0;
+    return weight / (Math.pow(mHeight, 2));
+}
+console.log(bmi({ height: 170, weight: 65 }));
+console.log(bmi({ height: 150, weight: 40 }));
