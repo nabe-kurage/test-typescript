@@ -1,2 +1,2 @@
 const array1: T[] = [];
-const array1: Array<T> = [];
+const array2: Array<T> = [];
